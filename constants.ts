@@ -3,7 +3,7 @@ export const DEFAULT_CONFIG = {
   inviteLink: "https://chat.whatsapp.com/C0u0wbDcIf7Eb6qtPBPgs8", 
   
   // CONFIGURAÇÃO: Título da página ou nome do grupo
-  groupName: "Comunidade VIP",
+  groupName: "COMUNIDADE VIP",
   
   // CONFIGURAÇÃO: Subtítulo ou chamada para ação
   description: "Clique no botão abaixo para acessar conteúdos exclusivos e fazer parte da nossa comunidade.",
@@ -14,7 +14,7 @@ export const DEFAULT_CONFIG = {
   // Imagem de fundo (opcional)
   backgroundImage: "https://picsum.photos/1920/1080?grayscale&blur=2",
 
-  // Imagem do Grupo (URL)
+  // Imagem do Grupo (URL) - Deixe vazio para usar o ícone do WhatsApp
   imageUrl: ""
 };
 
