@@ -1,221 +1,138 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grupo VIP - Fernanda Melo</title>
-    
+
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+
+        // Inicializa o Pixel
+        fbq('init', '1500209087964751'); 
+        
+        // Dispara o PageView IMEDIATAMENTE
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none" 
+             src="https://www.facebook.com/tr?id=1500209087964751&ev=PageView&noscript=1"/>
+    </noscript>
     <meta property="og:title" content="Grupo VIP - Fernanda Melo">
     <meta property="og:description" content="Clique para entrar no grupo exclusivo e receber ofertas.">
     <meta name="description" content="Clique para entrar no grupo exclusivo e receber ofertas.">
 
-    <script>
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      
-      // CONFIGURAÇÃO DO PIXEL
-      fbq('init', '1500209087964751'); // Seu ID Correto
-      fbq('track', 'PageView');        // Rastreia a visita na página
-    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
         theme: {
           extend: {
-            colors: {
-              whatsapp: {
-                brand: '#25D366',
-                600: '#16a34a',
-                800: '#166534',
-              }
-            },
-            animation: {
-              'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-              'float': 'float 6s ease-in-out infinite',
-            },
-            keyframes: {
-              float: {
-                '0%, 100%': { transform: 'translateY(0)' },
-                '50%': { transform: 'translateY(-10px)' },
-              }
-            }
+            colors: { whatsapp: { brand: '#25D366', 600: '#16a34a', 800: '#166534' } },
+            animation: { 'pulse-slow': 'pulse 3s infinite', 'float': 'float 6s infinite' },
+            keyframes: { float: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-10px)' } } }
           }
         }
       }
     </script>
 
     <style>
-      /* Efeitos Visuais Extras */
-      .glass {
-        background: rgba(255, 255, 255, 0.05);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-      }
-      body {
-        font-family: ui-sans-serif, system-ui, sans-serif;
-      }
-      .ripple-container {
-        position: relative;
-        overflow: hidden;
-        transform: translate3d(0, 0, 0);
-      }
-      .ripple-effect {
-        position: absolute;
-        border-radius: 50%;
-        background-color: rgba(255, 255, 255, 0.4);
-        width: 100px;
-        height: 100px;
-        margin-top: -50px;
-        margin-left: -50px;
-        animation: ripple 0.6s linear;
-        pointer-events: none;
-      }
-      @keyframes ripple {
-        from { opacity: 1; transform: scale(0); }
-        to { opacity: 0; transform: scale(4); }
-      }
+      .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+      body { font-family: ui-sans-serif, system-ui, sans-serif; }
+      .ripple-container { position: relative; overflow: hidden; }
+      .ripple-effect { position: absolute; border-radius: 50%; background: rgba(255,255,255,0.4); width: 100px; height: 100px; margin-top: -50px; margin-left: -50px; animation: ripple 0.6s linear; pointer-events: none; }
+      @keyframes ripple { from { opacity: 1; transform: scale(0); } to { opacity: 0; transform: scale(4); } }
     </style>
 </head>
+
 <body class="bg-slate-950 text-white antialiased overflow-hidden min-h-screen flex items-center justify-center relative">
     
-    <noscript><img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=1500209087964751&ev=PageView&noscript=1"
-    /></noscript>
-
     <div class="absolute inset-0 z-0">
         <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-950 to-black z-10 opacity-90"></div>
-        <img id="bg-image" src="" alt="Background" class="w-full h-full object-cover opacity-30" />
-        
+        <img id="bg-image" src="" class="w-full h-full object-cover opacity-30" />
         <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-whatsapp-brand/10 rounded-full blur-3xl animate-pulse-slow"></div>
-        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl animate-pulse-slow delay-1000"></div>
     </div>
 
     <main class="relative z-20 w-full max-w-md px-6 py-12 flex flex-col items-center text-center animate-float">
-        
-        <div class="w-full glass rounded-3xl p-8 md:p-10 shadow-2xl border border-white/10 bg-black/40 backdrop-blur-xl">
+        <div class="w-full glass rounded-3xl p-8 shadow-2xl bg-black/40">
             
             <div class="mx-auto mb-8 relative w-28 h-28 flex items-center justify-center rounded-full bg-slate-800 border-4 border-slate-700 shadow-xl overflow-hidden">
-                <div id="image-container" class="w-full h-full flex items-center justify-center">
-                    </div>
+                <div id="image-container" class="w-full h-full flex items-center justify-center"></div>
             </div>
 
-            <h1 id="group-name" class="text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-4 drop-shadow-lg break-words uppercase">
-                </h1>
-            
-            <p id="description" class="text-slate-300 text-lg leading-relaxed mb-10 max-w-xs mx-auto whitespace-pre-line">
-                </p>
+            <h1 id="group-name" class="text-3xl font-extrabold mb-4 uppercase"></h1>
+            <p id="description" class="text-slate-300 text-lg mb-10 whitespace-pre-line"></p>
 
             <div class="w-full flex justify-center">
-                <div class="relative group w-full md:w-auto">
-                    <div class="absolute -inset-1 bg-whatsapp-brand rounded-full blur opacity-40 group-hover:opacity-75 transition duration-1000 group-hover:duration-200 animate-pulse-slow"></div>
-                    
-                    <button id="join-btn" class="ripple-container relative flex items-center justify-center gap-3 w-full md:w-auto min-w-[280px] px-8 py-5 bg-whatsapp-brand hover:bg-whatsapp-600 active:bg-whatsapp-800 text-white font-bold text-lg rounded-full shadow-[0_0_40px_-10px_rgba(37,211,102,0.5)] transform transition-all duration-300 ease-out hover:scale-[1.02] hover:-translate-y-1 active:scale-[0.98]">
-                        <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="text-white">
-                            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.53 1.761.815 2.795.816H12.04c3.181 0 5.768-2.587 5.769-5.767.001-3.18-2.586-5.766-5.777-5.766zm8.854-1.879C18.529 1.936 15.404.629 12.028.628 5.748.629.63 5.748.63 12.029c0 2.008.524 3.967 1.521 5.696l-1.616 5.899 6.035-1.583c1.671.912 3.551 1.391 5.457 1.392h.004c6.28 0 11.396-5.118 11.397-11.4 0-3.045-1.185-5.909-3.339-8.064zM12.035 21.56h-.004c-1.696 0-3.359-.456-4.81-1.317l-.345-.205-3.575.937.954-3.479-.224-.356c-.947-1.508-1.446-3.255-1.447-5.111 0-5.32 4.329-9.648 9.65-9.648 2.576 0 4.997 1.004 6.818 2.825 1.821 1.822 2.825 4.242 2.824 6.82-.001 5.321-4.33 9.649-9.65 9.649H12.035z"/>
-                            <path d="M15.397 14.167c-.185-.093-1.093-.539-1.263-.601-.169-.062-.292-.093-.415.093-.124.186-.478.601-.586.728-.108.125-.216.14-.401.047-.185-.093-.781-.287-1.488-.917-.552-.493-.925-1.102-1.033-1.288-.108-.186-.011-.286.081-.378.084-.083.186-.217.278-.325.093-.109.124-.186-.31.062-.124.031-.233-.016-.326-.046-.093-.415-1.001-.569-1.371-.149-.362-.303-.31-.416-.316h-.355c-.124 0-.325.047-.494.233-.17.186-.648.634-.648 1.546 0 .912.664 1.794.757 1.918.093.124 1.306 1.995 3.164 2.797 1.857.802 1.857.535 2.196.502.339-.033 1.093-.447 1.248-.879.155-.433.155-.804.108-.879-.047-.075-.171-.12-.356-.213z"/>
-                        </svg>
-                        <span id="btn-text">Entrar no Grupo</span>
-                    </button>
-                </div>
+                <button id="join-btn" class="ripple-container flex items-center justify-center gap-3 w-full px-8 py-5 bg-whatsapp-brand hover:bg-whatsapp-600 text-white font-bold text-lg rounded-full shadow-lg transform transition hover:scale-105">
+                    <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.53 1.761.815 2.795.816H12.04c3.181 0 5.768-2.587 5.769-5.767.001-3.18-2.586-5.766-5.777-5.766zm8.854-1.879C18.529 1.936 15.404.629 12.028.628 5.748.629.63 5.748.63 12.029c0 2.008.524 3.967 1.521 5.696l-1.616 5.899 6.035-1.583c1.671.912 3.551 1.391 5.457 1.392h.004c6.28 0 11.396-5.118 11.397-11.4 0-3.045-1.185-5.909-3.339-8.064zM12.035 21.56h-.004c-1.696 0-3.359-.456-4.81-1.317l-.345-.205-3.575.937.954-3.479-.224-.356c-.947-1.508-1.446-3.255-1.447-5.111 0-5.32 4.329-9.648 9.65-9.648 2.576 0 4.997 1.004 6.818 2.825 1.821 1.822 2.825 4.242 2.824 6.82-.001 5.321-4.33 9.649-9.65 9.649H12.035z"/><path d="M15.397 14.167c-.185-.093-1.093-.539-1.263-.601-.169-.062-.292-.093-.415.093-.124.186-.478.601-.586.728-.108.125-.216.14-.401.047-.185-.093-.781-.287-1.488-.917-.552-.493-.925-1.102-1.033-1.288-.108-.186-.011-.286.081-.378.084-.083.186-.217.278-.325.093-.109.124-.186-.31.062-.124.031-.233-.016-.326-.046-.093-.415-1.001-.569-1.371-.149-.362-.303-.31-.416-.316h-.355c-.124 0-.325.047-.494.233-.17.186-.648.634-.648 1.546 0 .912.664 1.794.757 1.918.093.124 1.306 1.995 3.164 2.797 1.857.802 1.857.535 2.196.502.339-.033 1.093-.447 1.248-.879.155-.433.155-.804.108-.879-.047-.075-.171-.12-.356-.213z"/></svg>
+                    <span id="btn-text">Entrar no Grupo</span>
+                </button>
             </div>
-
-            <p class="mt-8 text-xs text-slate-500 uppercase tracking-widest font-semibold">
-                Seguro • Oficial • Gratuito
-            </p>
+            
+            <p class="mt-8 text-xs text-slate-500 uppercase font-semibold">Seguro • Oficial • Gratuito</p>
         </div>
     </main>
 
-    <footer class="absolute bottom-4 text-center w-full z-20 text-slate-600 text-sm">
-        <span class="cursor-default select-none">
-            &copy; <span id="year"></span> ZapConnect
-        </span>
+    <footer class="absolute bottom-4 w-full text-center text-slate-600 text-sm">
+        &copy; <span id="year"></span> ZapConnect
     </footer>
 
     <script>
-        // ==========================================
-        //  ÁREA DE CONFIGURAÇÃO (EDITE AQUI SEMPRE)
-        // ==========================================
+        // ============================
+        // EDITE SEU LINK AQUI
+        // ============================
         const config = {
-            // 1. LINK DO GRUPO (Troque toda semana aqui)
-            inviteLink: "https://chat.whatsapp.com/C0u0wbDcIf7Eb6qtPBPgs8",
+            inviteLink: "https://chat.whatsapp.com/C0u0wbDcIf7Eb6qtPBPgs8", // SEU LINK
             
-            // 2. TEXTOS DA PÁGINA
             groupName: "Grupo VIP",
-            description: "Clique no botão abaixo para acessar o grupo VIP e ter acesso a aula gratuita.",
+            description: "Clique no botão para entrar no grupo.",
             buttonLabel: "Entrar no Grupo",
-
-            // 3. IMAGENS (Opcional)
             backgroundImage: "https://picsum.photos/1920/1080?grayscale&blur=2",
-            imageUrl: "" // Deixe as aspas vazias "" para usar o logo do WhatsApp
+            imageUrl: "" 
         };
-        // ==========================================
 
-
-        // Inicialização do site (Não precisa mexer abaixo daqui)
+        // Inicialização
         document.addEventListener('DOMContentLoaded', () => {
-            // Definir textos e imagens
             document.getElementById('group-name').innerText = config.groupName;
             document.getElementById('description').innerText = config.description;
             document.getElementById('btn-text').innerText = config.buttonLabel;
             document.getElementById('bg-image').src = config.backgroundImage;
             document.getElementById('year').innerText = new Date().getFullYear();
 
-            // Configurar Imagem Redonda Central
+            // Renderiza Ícone
             const imgContainer = document.getElementById('image-container');
             if (config.imageUrl && config.imageUrl.trim() !== "") {
-                imgContainer.innerHTML = `<img src="${config.imageUrl}" alt="${config.groupName}" class="w-full h-full object-cover">`;
+                imgContainer.innerHTML = `<img src="${config.imageUrl}" class="w-full h-full object-cover">`;
             } else {
-                imgContainer.innerHTML = `
-                <svg viewBox="0 0 24 24" width="56" height="56" fill="#25D366" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.53 1.761.815 2.795.816H12.04c3.181 0 5.768-2.587 5.769-5.767.001-3.18-2.586-5.766-5.777-5.766zm8.854-1.879C18.529 1.936 15.404.629 12.028.628 5.748.629.63 5.748.63 12.029c0 2.008.524 3.967 1.521 5.696l-1.616 5.899 6.035-1.583c1.671.912 3.551 1.391 5.457 1.392h.004c6.28 0 11.396-5.118 11.397-11.4 0-3.045-1.185-5.909-3.339-8.064zM12.035 21.56h-.004c-1.696 0-3.359-.456-4.81-1.317l-.345-.205-3.575.937.954-3.479-.224-.356c-.947-1.508-1.446-3.255-1.447-5.111 0-5.32 4.329-9.648 9.65-9.648 2.576 0 4.997 1.004 6.818 2.825 1.821 1.822 2.825 4.242 2.824 6.82-.001 5.321-4.33 9.649-9.65 9.649H12.035z"/>
-                    <path d="M15.397 14.167c-.185-.093-1.093-.539-1.263-.601-.169-.062-.292-.093-.415.093-.124.186-.478.601-.586.728-.108.125-.216.14-.401.047-.185-.093-.781-.287-1.488-.917-.552-.493-.925-1.102-1.033-1.288-.108-.186-.011-.286.081-.378.084-.083.186-.217.278-.325.093-.109.124-.186.186-.31.062-.124.031-.233-.016-.326-.046-.093-.415-1.001-.569-1.371-.149-.362-.303-.31-.416-.316h-.355c-.124 0-.325.047-.494.233-.17.186-.648.634-.648 1.546 0 .912.664 1.794.757 1.918.093.124 1.306 1.995 3.164 2.797 1.857.802 1.857.535 2.196.502.339-.033 1.093-.447 1.248-.879.155-.433.155-.804.108-.879-.047-.075-.171-.12-.356-.213z"/>
-                </svg>`;
+                imgContainer.innerHTML = `<svg viewBox="0 0 24 24" width="56" height="56" fill="#25D366"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.53 1.761.815 2.795.816H12.04c3.181 0 5.768-2.587 5.769-5.767.001-3.18-2.586-5.766-5.777-5.766zm8.854-1.879C18.529 1.936 15.404.629 12.028.628 5.748.629.63 5.748.63 12.029c0 2.008.524 3.967 1.521 5.696l-1.616 5.899 6.035-1.583c1.671.912 3.551 1.391 5.457 1.392h.004c6.28 0 11.396-5.118 11.397-11.4 0-3.045-1.185-5.909-3.339-8.064zM12.035 21.56h-.004c-1.696 0-3.359-.456-4.81-1.317l-.345-.205-3.575.937.954-3.479-.224-.356c-.947-1.508-1.446-3.255-1.447-5.111 0-5.32 4.329-9.648 9.65-9.648 2.576 0 4.997 1.004 6.818 2.825 1.821 1.822 2.825 4.242 2.824 6.82-.001 5.321-4.33 9.649-9.65 9.649H12.035z"/><path d="M15.397 14.167c-.185-.093-1.093-.539-1.263-.601-.169-.062-.292-.093-.415.093-.124.186-.478.601-.586.728-.108.125-.216.14-.401.047-.185-.093-.781-.287-1.488-.917-.552-.493-.925-1.102-1.033-1.288-.108-.186-.011-.286.081-.378.084-.083.186-.217.278-.325.093-.109.124-.186-.31.062-.124.031-.233-.016-.326-.046-.093-.415-1.001-.569-1.371-.149-.362-.303-.31-.416-.316h-.355c-.124 0-.325.047-.494.233-.17.186-.648.634-.648 1.546 0 .912.664 1.794.757 1.918.093.124 1.306 1.995 3.164 2.797 1.857.802 1.857.535 2.196.502.339-.033 1.093-.447 1.248-.879.155-.433.155-.804.108-.879-.047-.075-.171-.12-.356-.213z"/></svg>`;
             }
 
-            // Lógica do Botão
+            // Ação do Botão
             const btn = document.getElementById('join-btn');
-            
             btn.addEventListener('click', function(e) {
-                // Efeito visual de clique (Ripple)
-                let ripple = document.createElement("span");
-                ripple.classList.add("ripple-effect");
-                let rect = btn.getBoundingClientRect();
-                ripple.style.left = (e.clientX - rect.left) + "px";
-                ripple.style.top = (e.clientY - rect.top) + "px";
-                btn.appendChild(ripple);
-                setTimeout(() => { ripple.remove() }, 1000);
-
-                // Feedback visual
+                // Efeito visual
+                let ripple = document.createElement("span"); ripple.classList.add("ripple-effect");
+                let rect = btn.getBoundingClientRect(); ripple.style.left = (e.clientX - rect.left) + "px"; ripple.style.top = (e.clientY - rect.top) + "px";
+                btn.appendChild(ripple); setTimeout(() => { ripple.remove() }, 1000);
+                
+                // Texto mudando
                 const originalText = document.getElementById('btn-text').innerText;
                 document.getElementById('btn-text').innerText = "Entrando...";
                 
-                // Rastreamento do Pixel (Evento 'Lead')
-                try {
-                    if (typeof fbq === 'function') {
-                        fbq('track', 'Lead', {
-                            content_name: config.groupName,
-                            content_category: 'WhatsApp Group Join'
-                        });
-                    }
-                } catch(err) {
-                    console.error('Erro Pixel:', err);
+                // DISPARA O PIXEL "LEAD" (ENTROU NO GRUPO)
+                if (typeof fbq === 'function') {
+                    fbq('track', 'Lead');
                 }
 
-                // Redirecionamento
-                setTimeout(() => {
-                    window.location.href = config.inviteLink;
-                    // Resetar texto se o usuário voltar
-                    setTimeout(() => {
-                        document.getElementById('btn-text').innerText = originalText;
-                    }, 2000);
-                }, 600);
+                // Redireciona
+                setTimeout(() => { window.location.href = config.inviteLink; setTimeout(() => { document.getElementById('btn-text').innerText = originalText; }, 2000); }, 600);
             });
         });
     </script>
