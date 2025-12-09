@@ -5,26 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grupo VIP - Fernanda Melo</title>
 
-    <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-
-        // Inicializa o Pixel
-        fbq('init', '1500209087964751'); 
-        
-        // Dispara o PageView IMEDIATAMENTE
-        fbq('track', 'PageView');
-    </script>
-    <noscript>
-        <img height="1" width="1" style="display:none" 
-             src="https://www.facebook.com/tr?id=1500209087964751&ev=PageView&noscript=1"/>
-    </noscript>
     <meta property="og:title" content="Grupo VIP - Fernanda Melo">
     <meta property="og:description" content="Clique para entrar no grupo exclusivo e receber ofertas.">
     <meta name="description" content="Clique para entrar no grupo exclusivo e receber ofertas.">
@@ -52,7 +32,27 @@
 </head>
 
 <body class="bg-slate-950 text-white antialiased overflow-hidden min-h-screen flex items-center justify-center relative">
-    
+
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+
+        // Inicializa o Pixel
+        fbq('init', '1500209087964751'); 
+        
+        // Dispara o PageView
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none" 
+             src="https://www.facebook.com/tr?id=1500209087964751&ev=PageView&noscript=1"/>
+    </noscript>
     <div class="absolute inset-0 z-0">
         <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-950 to-black z-10 opacity-90"></div>
         <img id="bg-image" src="" class="w-full h-full object-cover opacity-30" />
@@ -106,7 +106,6 @@
             document.getElementById('bg-image').src = config.backgroundImage;
             document.getElementById('year').innerText = new Date().getFullYear();
 
-            // Renderiza Ícone
             const imgContainer = document.getElementById('image-container');
             if (config.imageUrl && config.imageUrl.trim() !== "") {
                 imgContainer.innerHTML = `<img src="${config.imageUrl}" class="w-full h-full object-cover">`;
@@ -114,24 +113,19 @@
                 imgContainer.innerHTML = `<svg viewBox="0 0 24 24" width="56" height="56" fill="#25D366"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.53 1.761.815 2.795.816H12.04c3.181 0 5.768-2.587 5.769-5.767.001-3.18-2.586-5.766-5.777-5.766zm8.854-1.879C18.529 1.936 15.404.629 12.028.628 5.748.629.63 5.748.63 12.029c0 2.008.524 3.967 1.521 5.696l-1.616 5.899 6.035-1.583c1.671.912 3.551 1.391 5.457 1.392h.004c6.28 0 11.396-5.118 11.397-11.4 0-3.045-1.185-5.909-3.339-8.064zM12.035 21.56h-.004c-1.696 0-3.359-.456-4.81-1.317l-.345-.205-3.575.937.954-3.479-.224-.356c-.947-1.508-1.446-3.255-1.447-5.111 0-5.32 4.329-9.648 9.65-9.648 2.576 0 4.997 1.004 6.818 2.825 1.821 1.822 2.825 4.242 2.824 6.82-.001 5.321-4.33 9.649-9.65 9.649H12.035z"/><path d="M15.397 14.167c-.185-.093-1.093-.539-1.263-.601-.169-.062-.292-.093-.415.093-.124.186-.478.601-.586.728-.108.125-.216.14-.401.047-.185-.093-.781-.287-1.488-.917-.552-.493-.925-1.102-1.033-1.288-.108-.186-.011-.286.081-.378.084-.083.186-.217.278-.325.093-.109.124-.186-.31.062-.124.031-.233-.016-.326-.046-.093-.415-1.001-.569-1.371-.149-.362-.303-.31-.416-.316h-.355c-.124 0-.325.047-.494.233-.17.186-.648.634-.648 1.546 0 .912.664 1.794.757 1.918.093.124 1.306 1.995 3.164 2.797 1.857.802 1.857.535 2.196.502.339-.033 1.093-.447 1.248-.879.155-.433.155-.804.108-.879-.047-.075-.171-.12-.356-.213z"/></svg>`;
             }
 
-            // Ação do Botão
             const btn = document.getElementById('join-btn');
             btn.addEventListener('click', function(e) {
-                // Efeito visual
                 let ripple = document.createElement("span"); ripple.classList.add("ripple-effect");
                 let rect = btn.getBoundingClientRect(); ripple.style.left = (e.clientX - rect.left) + "px"; ripple.style.top = (e.clientY - rect.top) + "px";
                 btn.appendChild(ripple); setTimeout(() => { ripple.remove() }, 1000);
                 
-                // Texto mudando
                 const originalText = document.getElementById('btn-text').innerText;
                 document.getElementById('btn-text').innerText = "Entrando...";
                 
-                // DISPARA O PIXEL "LEAD" (ENTROU NO GRUPO)
                 if (typeof fbq === 'function') {
                     fbq('track', 'Lead');
                 }
 
-                // Redireciona
                 setTimeout(() => { window.location.href = config.inviteLink; setTimeout(() => { document.getElementById('btn-text').innerText = originalText; }, 2000); }, 600);
             });
         });
